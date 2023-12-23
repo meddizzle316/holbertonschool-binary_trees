@@ -43,18 +43,29 @@ int binary_tree_balance(const binary_tree_t *tree)
 		return (0);
 	return (binary_tree_height2(tree->left) -  binary_tree_height2(tree->right));
 }
+
 /**
- * binary_tree_is_perfect - checks to see if a binary tree is perfect
+ * binary_tree_is_perfect2 - checks to see if a binary tree is perfect
+ * @t: given root node of binary tree
+ * Return: 1 if true, 0 if false or tree is NULL
+ */
+int binary_tree_is_perfect2(const binary_tree_t *t)
+{
+	if (t == NULL)
+		return (1);
+	if ((binary_tree_balance(t)) != 0)
+		return (0);
+	return (binary_tree_is_perfect2(t->right)
+		&& binary_tree_is_perfect2(t->left));
+}
+/**
+ * binary_tree_is_perfect - wrapper function; deals with null case
  * @t: given root node of binary tree
  * Return: 1 if true, 0 if false or tree is NULL
  */
 int binary_tree_is_perfect(const binary_tree_t *t)
 {
-
 	if (t == NULL)
-		return (1);
-	if ((binary_tree_balance(t)) != 0)
 		return (0);
-	return (binary_tree_is_perfect(t->right) && binary_tree_is_perfect(t->left));
+	return (binary_tree_is_perfect2(t));
 }
-
