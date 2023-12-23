@@ -30,7 +30,7 @@ int binary_tree_is_full(const binary_tree_t *t)
 {
 	int lh, rh;
 
-	if (t == NULL)
+	if (t == NULL || (t->right != NULL && t->left != NULL))
 		return (1);
 	lh = binary_tree_height_recursion(t->left);
 	rh = binary_tree_height_recursion(t->right);
