@@ -5,8 +5,6 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-
-int _putchar(char c);
 /**
  * struct binary_tree_s - Binary tree node
  *
