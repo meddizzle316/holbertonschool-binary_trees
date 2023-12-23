@@ -1,4 +1,6 @@
 #include "binary_trees.h"
+size_t binary_tree_height_recursion(const binary_tree_t *tree);
+
 /**
  * binary_tree_height2 -- a height function that doesn't -1 at the end
  * @tree: root node to find height of
